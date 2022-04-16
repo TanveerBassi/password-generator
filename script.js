@@ -14,6 +14,8 @@ const generatePassword = () => {
   /*
    * All your code goes here to generate a password
    */
+  /*mock window prompt to see if it works
+  result = window.prompt(message, default);*/
 };
 
 // Write password to the #password input
