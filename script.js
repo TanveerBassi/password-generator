@@ -1,6 +1,18 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 
+// const getPasswordLenght = () => {
+
+// }
+
+// const getPasswordCriteria = () => {
+
+// }
+
+// const getRandomPassword = () => {
+
+// }
+
 //click on button - links to prompt
 //! prompt 1 - enter a password between 8 - 128
 //! alert great! that meets our criteria for characters!characters this can include lowercase, uppercase, numeric, and/or special characters
@@ -15,7 +27,8 @@ const generatePassword = () => {
    * All your code goes here to generate a password
    */
   /*mock window prompt to see if it works
-  result = window.prompt(message, default);*/
+  result = window.prompt("yoooo put in a password");
+  console.log(result);;*/
 };
 
 // Write password to the #password input
