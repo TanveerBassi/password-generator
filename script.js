@@ -1,17 +1,14 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 
-// const getPasswordLenght = () => {
+const getPasswordLength = () => {
+  const userInput = prompt("put in a password length between 8 - 128 chars");
+  return userInput;
+};
 
-// }
+const getPasswordCriteria = () => {};
 
-// const getPasswordCriteria = () => {
-
-// }
-
-// const getRandomPassword = () => {
-
-// }
+const getRandomPassword = () => {};
 
 //click on button - links to prompt
 //! prompt 1 - enter a password between 8 - 128
@@ -21,21 +18,40 @@ const generateBtn = document.querySelector("#generate");
 //! prompts 2 - if cust has made a password between 8 -128 characters
 //! prompt
 
+// const userInput = prompt("yoooo put in a password");
+
 // main function to generate the random password
 const generatePassword = () => {
+  const passwordLength = getPasswordLength();
+  const passwordLengthInput = parseInt(passwordLength);
+  const isNumber = Number.isInteger(passwordLengthInput);
+  console.log(isNumber);
+  if (!isNumber || passwordLengthInput < 8 || passwordLengthInput > 128) {
+    console.log("no mas");
+    //alert
+  } else {
+    console.log("tranquillo");
+    //proceed with code
+  }
+  // const userLower = prompt("provide lower case as part of password");
+  // console.log(userLower);
+  // const userUpper = prompt("uppercase");
+  // console.log(userUpper);
+  // const userSymbols = prompt("add symbols");
+  // console.log(userNumber);
+  // const userNumber = prompt("add specials");
+  // console.log(userSpecial);
+  //if user does not pass valid string of s\eryhwa78974 - alert user to put in valid string
   /*
    * All your code goes here to generate a password
    */
-  /*mock window prompt to see if it works
-  result = window.prompt("yoooo put in a password");
-  console.log(result);;*/
+  return "hello";
 };
 
 // Write password to the #password input
 const writePassword = () => {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 };
 
