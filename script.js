@@ -6,7 +6,16 @@ const getPasswordLength = () => {
   return userInput;
 };
 
-const getPasswordCriteria = () => {};
+const getPasswordCriteria = () => {
+  const userLower = prompt("provide lower case as part of password");
+  console.log(userLower);
+  // const userUpper = prompt("uppercase");
+  // console.log(userUpper);
+  // const userSymbols = prompt("add symbols");
+  // console.log(userNumber);
+  // const userNumber = prompt("add specials");
+  // console.log(userSpecial);
+};
 
 const getRandomPassword = () => {};
 
@@ -25,14 +34,15 @@ const generatePassword = () => {
   const passwordLength = getPasswordLength();
   const passwordLengthInput = parseInt(passwordLength);
   const isNumber = Number.isInteger(passwordLengthInput);
-  console.log(isNumber);
+  // console.log(isNumber);
   if (!isNumber || passwordLengthInput < 8 || passwordLengthInput > 128) {
     console.log("no mas");
     //alert
   } else {
-    console.log("tranquillo");
+    getPasswordCriteria();
     //proceed with code
   }
+
   // const userLower = prompt("provide lower case as part of password");
   // console.log(userLower);
   // const userUpper = prompt("uppercase");
@@ -41,7 +51,7 @@ const generatePassword = () => {
   // console.log(userNumber);
   // const userNumber = prompt("add specials");
   // console.log(userSpecial);
-  //if user does not pass valid string of s\eryhwa78974 - alert user to put in valid string
+
   /*
    * All your code goes here to generate a password
    */
