@@ -7,27 +7,46 @@ const getPasswordLength = () => {
 };
 
 const getPasswordCriteria = () => {
-  const userLower = prompt("provide lower case as part of password");
-  console.log(userLower);
-  // const userUpper = prompt("uppercase");
+  const isUserLower = confirm(
+    "would you like to include lowercase in your password, please answer yes or no?"
+  );
+  const isUserUpper = confirm(
+    "would you like to include uppercase in your password, please answer yes or no?"
+  );
+  const isUserSymbols = confirm(
+    "would you like to include symbols in your password, please answer yes or no?"
+  );
+  const isUserNumbers = confirm(
+    "would you like to include numbers  in your password, please answer yes or no?"
+  );
+  return {
+    isUserLower: isUserLower,
+    isUserUpper: isUserUpper,
+    isUserSymbols: isUserSymbols,
+    isUserNumbers: isUserNumbers,
+  };
   // console.log(userUpper);
   // const userSymbols = prompt("add symbols");
-  // console.log(userNumber);
-  // const userNumber = prompt("add specials");
+  // console.log(userSymbols);
+  // const userSpecial = prompt("add specials");
   // console.log(userSpecial);
 };
 
-const getRandomPassword = () => {};
-
-//click on button - links to prompt
-//! prompt 1 - enter a password between 8 - 128
-//! alert great! that meets our criteria for characters!characters this can include lowercase, uppercase, numeric, and/or special characters
-//store prompt 1 answer a variable - example initialPassword = "TanveerBassi123" - info cust has supplied
-//! prompt 1 - if customer enters password less then 8 or more then 128 characters, alert cust please enter a character between 8 - 128 characters
-//! prompts 2 - if cust has made a password between 8 -128 characters
-//! prompt
-
-// const userInput = prompt("yoooo put in a password");
+// const getRandomPassword = () => {
+//   function isUserLower() {
+//     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+//   }
+//   function isUserUpper() {
+//     return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+//   }
+//   function isUserSymbols() {
+//     return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+//   }
+//   function isUserNumbers() {
+//     const symbols = "!@#$%^&*(){}[]=<>/,.";
+//     return symbols[Math.floor(Math.random() * symbols.length)];
+//   }
+// };
 
 // main function to generate the random password
 const generatePassword = () => {
@@ -36,26 +55,17 @@ const generatePassword = () => {
   const isNumber = Number.isInteger(passwordLengthInput);
   // console.log(isNumber);
   if (!isNumber || passwordLengthInput < 8 || passwordLengthInput > 128) {
-    console.log("no mas");
+    alert("please enter a valid password length");
     //alert
   } else {
-    getPasswordCriteria();
+    return passwordLengthInput && getPasswordCriteria();
     //proceed with code
   }
-
-  // const userLower = prompt("provide lower case as part of password");
-  // console.log(userLower);
-  // const userUpper = prompt("uppercase");
-  // console.log(userUpper);
-  // const userSymbols = prompt("add symbols");
-  // console.log(userNumber);
-  // const userNumber = prompt("add specials");
-  // console.log(userSpecial);
 
   /*
    * All your code goes here to generate a password
    */
-  return "hello";
+  return "";
 };
 
 // Write password to the #password input
