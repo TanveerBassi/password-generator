@@ -17,10 +17,28 @@ const getPasswordCriteria = () => {
     isConfirmCharacter: confirmCharacter,
     isConfirmUppercase: confirmUppercase,
     isConfirmLowercase: confirmLowercase,
+    // loop through object to ensure atleast one is chosen, then alert if one isn't and if/else to ensure we have 2 plus once we have this loop through to gen password from random func
   };
 };
+// create four functions to generate random return using in build method of charcode
+const getRandomPassword = () => {
+  function isConfirmLowercase() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  }
 
-const getRandomPassword = () => {};
+  function isConfirmUppercase() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  }
+
+  function isConfirmNumber() {
+    return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  }
+
+  function isConfirmCharacter() {
+    const symbols = "!@#$%^&*(){}[]=<>/,.";
+    return symbols[Math.floor(Math.random() * symbols.length)];
+  }
+};
 
 // main function to generate the random password
 const generatePassword = () => {
@@ -29,10 +47,8 @@ const generatePassword = () => {
   const isNumber = Number.isInteger(passwordLengthInput);
   if (!isNumber || passwordLengthInput < 8 || passwordLengthInput > 128) {
     alert("please enter a valid password length");
-    //alert
   } else {
     return passwordLengthInput && getPasswordCriteria();
-    //proceed with code
   }
 
   /*
