@@ -8,10 +8,16 @@ const getPasswordLength = () => {
 };
 
 const getPasswordCriteria = () => {
-  confirmNumber = confirm("Will this contain numbers?");
-  confirmCharacter = confirm("Will this contain special characters?");
-  confirmUppercase = confirm("Will this contain Uppercase letters?");
-  confirmLowercase = confirm("Will this contain Lowercase letters?");
+  const confirmNumber = confirm("Will this contain numbers?");
+  const confirmCharacter = confirm("Will this contain special characters?");
+  const confirmUppercase = confirm("Will this contain Uppercase letters?");
+  const confirmLowercase = confirm("Will this contain Lowercase letters?");
+  return {
+    isConfirmNumber: confirmNumber,
+    isConfirmCharacter: confirmCharacter,
+    isConfirmUppercase: confirmUppercase,
+    isConfirmLowercase: confirmLowercase,
+  };
 };
 
 const getRandomPassword = () => {};
@@ -21,7 +27,6 @@ const generatePassword = () => {
   const passwordLength = getPasswordLength();
   const passwordLengthInput = parseInt(passwordLength);
   const isNumber = Number.isInteger(passwordLengthInput);
-  // console.log(isNumber);
   if (!isNumber || passwordLengthInput < 8 || passwordLengthInput > 128) {
     alert("please enter a valid password length");
     //alert
