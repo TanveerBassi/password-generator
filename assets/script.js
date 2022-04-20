@@ -37,6 +37,7 @@ const getPasswordCriteria = () => {
 
   return passwordCriteria;
 };
+//DO THIS TOMORROW, THIS CAUSING ISSUES MAKE THIS SIMPLER
 // create four functions to generate random return using in build method of charcode
 const randomNumberGenerator = {
   lowerCase: function isConfirmLowercase() {
