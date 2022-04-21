@@ -25,7 +25,7 @@ const getPasswordCriteria = () => {
   // four prompts created - which are variables
   const lowercase = confirm("do you want lowercase in your password?");
   const uppercase = confirm("do you want uppercase in your password?");
-  const numeric = confirm("do you want numbers in your password?");
+  const numbers = confirm("do you want numbers in your password?");
   const specialCharacter = confirm(
     "do you want special characters in your password?"
   );
@@ -41,7 +41,7 @@ const getPasswordCriteria = () => {
     choiceArray.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
   }
 
-  if (numeric) {
+  if (numbers) {
     choiceArray.push("0123456789");
   }
 
@@ -52,6 +52,24 @@ const getPasswordCriteria = () => {
   return choiceArray;
 };
 
+const getRandomPassword = (passwordLength, passwordCriteria) => {
+  const passwordArray = [];
+  for (let i = 0; i < passwordLength; i += 1) {
+    //for loops until we get pass length
+    const randomCategoryIndex = Math.floor(
+      Math.random() * passwordCriteria.length
+    );
+    // get random symbol
+    const randomCategory = passwordCriteria[randomCategoryIndex];
+    // get random index
+    const randomIndex = Math.floor(Math.random() * randomCategory.length);
+    // get random character
+    const randomCharacter = randomCategory.charAt(randomIndex);
+    passwordArray.push(randomCharacter);
+  }
+  return passwordArray.join("");
+};
+
 // main function to generate the random password
 const generatePassword = () => {
   // get the password length
@@ -60,10 +78,10 @@ const generatePassword = () => {
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
 
-  // create random password
-  const password = createRandomPassword(passwordLength, passwordCriteria);
+  //get random password
+  const randomPassword = getRandomPassword(passwordLength, passwordCriteria);
 
-  return password;
+  return randomPassword;
 };
 
 // Write password to the #password input
